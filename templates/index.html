@@ -1,0 +1,14 @@
+<!-- Should Extend Your Main file -->
+{% extends 'main.html' %}
+<!-- Open block body to add all html data and coles it -->
+{% block body %}
+<h1>Home Page</h1>
+<h2>Get All Users From Database</h2>
+<!-- This Loop -->
+{% for user in data %}
+<ul class="ul">
+    <li> Name: {{user[0]}} Age: {{user[1]}} Gender: {{user[2]}}</li>
+</ul>
+ 
+{%endfor%}
+{% endblock %}

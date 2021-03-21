@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{pageTitle}}</title>
+
+    <!-- You Can Access To CSS File Using[url_for] And must Folder Name [static] and add filename has you path -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    
+    <!-- This If Condetion -->
+    {% if custmCss: %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/pages/' + custmCss + '.css') }}">
+    {% endif %}
+</head>
+<body>
+    <!-- Open block body And End It To Render on Html File HAse All Styles And Js Files -->
+    {% block body %}
+    {% endblock %}
+
+    <!-- You Can Access To Js File Using[url_for] And must Folder Name [static] and add filename has you path -->
+    <script src="{{ url_for('static',filename='js/main.js') }}"></script>
+</body>
+</html>
